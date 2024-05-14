@@ -3,6 +3,7 @@ from ts.torch_handler.base_handler import BaseHandler
 from transformers import AutoTokenizer, AutoModel
 import intel_extension_for_pytorch as ipex 
 import logging
+import os
 
 logger = logging.getLogger(__name__)
 
@@ -28,6 +29,11 @@ class ModelHandler(BaseHandler):
         self.manifest = context.manifest
 
         model_dir = properties.get("model_dir")
+        try:
+            os.remove(os.path.join(model_dir,"pytorch_model.bin"))
+        except:
+            pass
+        # model_dir="/home/ubuntu/model_files"
         self.tokenizer = AutoTokenizer.from_pretrained(model_dir)
         self.model = AutoModel.from_pretrained(model_dir, torchscript=True)
         self.model.eval()
