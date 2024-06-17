@@ -27,7 +27,6 @@ echo "$extra_files"
 
 
 cmd="torch-model-archiver --model-name ${model_name} --version ${model_version} --serialized-file ${model_dir}/pytorch_model.bin --extra-files ${extra_files} --handler ${handler} --export-path ${output_dir}"
-# cmd="torch-model-archiver --model-name ${model_name} --version ${model_version} --handler ${handler} --export-path ${output_dir}"
 
 echo $cmd
 eval $cmd
