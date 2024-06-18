@@ -6,14 +6,13 @@ ENV MODEL_NAME_=${MODEL_NAME}
 
 # copy model files
 COPY ./model_handler.py /home/ubuntu/
-COPY ./model-distillation-UAE-Large-V12024-02-06_23-22-03 /home/ubuntu/model_files
+COPY ./model_files /home/ubuntu/model_files
 COPY ./archive_model.sh /home/ubuntu/
 COPY ./entrypoint.sh /home/ubuntu/
 RUN mkdir model_store
 
 USER root
 WORKDIR /home/ubuntu
-RUN apt-get update
 
 # create ts config file
 RUN printf "\nservice_envelope=json" >> /home/ubuntu/config.properties
@@ -28,7 +27,8 @@ RUN printf '\ncpu_launcher_args=--ninstances=1 --skip-cross-node-cores' >> /home
 
 
 # install torchserve and its dependencies into conda environment from ipex image
-RUN git clone https://github.com/pytorch/serve.git && \
+RUN apt-get update && \
+    git clone https://github.com/pytorch/serve.git && \
     . ./miniconda3/bin/activate && \
     conda activate py310 && \
     DEBIAN_FRONTEND=noninteractive python serve/ts_scripts/install_dependencies.py && \
