@@ -1,5 +1,5 @@
-# Intel Optimized Embedding Model
-The Intel Optimized Embedding Model is a lightweight text embeddig model that can be used for a variety of NLP tasks. The model is distilled from [UAE-Large-v1](https://huggingface.co/WhereIsAI/UAE-Large-V1) using the the sentence-transformers and Intel&reg; Extension for Pytorch (IPEX) frameworks. It is a 23M parameter model with an input sequence length of 512 and output embedding size of 384. It achieves average accuracies of 39% and 82% on the MTEB Retrieval and STS tasks respectively.
+# Intel Optimized Container for Embeddings
+The Intel Optimized Container for Embeddings is a lightweight text embeddig model that can be used for a variety of NLP tasks. The model is distilled from [UAE-Large-v1](https://huggingface.co/WhereIsAI/UAE-Large-V1) using the the sentence-transformers and Intel&reg; Extension for Pytorch (IPEX) frameworks. It is a 23M parameter model with an input sequence length of 512 and output embedding size of 384. It achieves average accuracies of 39% and 82% on the MTEB Retrieval and STS tasks respectively.
 
 ### Training Datasets
 
