@@ -1,5 +1,6 @@
 import torch
 from ts.torch_handler.base_handler import BaseHandler
+from ts.utils.util import PredictionException
 from transformers import AutoTokenizer, AutoModel
 import intel_extension_for_pytorch as ipex 
 import logging
@@ -57,9 +58,13 @@ class ModelHandler(BaseHandler):
         :return: list of preprocessed model input data
         """
         # extract input text from json
-        text = data[0].get("data")
-        if text is None:
-            text = data[0].get("body")
+        try:
+            text = data[0].get("data")
+        except:
+            raise PredictionException("Invalid Input Format. Example Usage:\n {\"instances\":[{\"data\": \"Example Input Text\"}]}", 400)
+        
+        if text is None or type(text) != str:
+            raise PredictionException("Invalid Input Format. Example Usage:\n {\"instances\":[{\"data\": \"Example Input Text\"}]}", 400)
             
         tokenized_text = self.tokenizer(text, padding=True, truncation=True, return_tensors='pt')
         return tokenized_text
@@ -104,6 +109,9 @@ class ModelHandler(BaseHandler):
         :return: prediction output
         """
         
-        model_input = self.preprocess(data)
-        model_output = self.inference(model_input)
+        try:
+            model_input = self.preprocess(data)
+            model_output = self.inference(model_input)
+        except PredictionException as e:
+            return e
         return [self.postprocess(model_output)]

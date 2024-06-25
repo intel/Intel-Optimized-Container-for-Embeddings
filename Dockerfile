@@ -20,10 +20,10 @@ RUN printf "\ninference_address=http://0.0.0.0:7080" >> /home/ubuntu/config.prop
 RUN printf "\nmanagement_address=http://0.0.0.0:7081" >> /home/ubuntu/config.properties
 RUN printf "\nmodel_store=/home/ubuntu/model_store" >> /home/ubuntu/config.properties
 RUN printf "\nload_models=${MODEL_NAME}.mar" >> /home/ubuntu/config.properties
-RUN printf "\ndefault_workers_per_model=4" >> /home/ubuntu/config.properties
+RUN printf "\ndefault_workers_per_model=1" >> /home/ubuntu/config.properties
 RUN printf "\nipex_enable=true" >> /home/ubuntu/config.properties
 RUN printf "\ncpu_launcher_enable=true" >> /home/ubuntu/config.properties
-RUN printf '\ncpu_launcher_args=--ninstances=1 --skip-cross-node-cores' >> /home/ubuntu/config.properties
+RUN printf '\ncpu_launcher_args=--skip-cross-node-cores' >> /home/ubuntu/config.properties
 
 
 # install torchserve and its dependencies into conda environment from ipex image
@@ -55,4 +55,5 @@ RUN . ./miniconda3/bin/activate && \
 
 
 # run Torchserve HTTP serve to respond to prediction requests
-ENTRYPOINT ./entrypoint.sh
+# ENTRYPOINT ./entrypoint.sh
+
