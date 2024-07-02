@@ -1,11 +1,17 @@
 # Intel Optimized Container for Embeddings
 The Intel Optimized Container for Embeddings is a lightweight text embeddig model that can be used for a variety of NLP tasks. The model is distilled from [UAE-Large-v1](https://huggingface.co/WhereIsAI/UAE-Large-V1) using the the sentence-transformers and Intel&reg; Extension for Pytorch (IPEX) frameworks. It is a 23M parameter model with an input sequence length of 512 and output embedding size of 384. It achieves average accuracies of 39% and 82% on the MTEB Retrieval and STS tasks respectively.
 
+## Cloning
+The model files are stored using git LFS. Make sure to install [git LFS](https://github.com/git-lfs/git-lfs/blob/main/INSTALLING.md) before cloning this repo.
+
+
 ## Build
 You can build the model serving container using the following script. This may take a while as it builds the IPEX base image from source.
 ```bash
 ./build.sh
 ```
+NOTE: If you are behind a proxy, you will need to add it to the docker build commands \
+i.e. ```--build-arg http_proxy=$http_proxy```
 ## Run
 This model is optimized for Intel&reg; Xeon&reg; Archicture using Intel&reg; Extension for Pytorch (IPEX) and enables the use of the latest Intel&reg; Advanced Matrix Extensions (AMX) for accelerated BF16 inference.
 
