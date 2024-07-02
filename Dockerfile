@@ -1,5 +1,5 @@
 # build off of ipex image
-FROM intel-extension-for-pytorch:main as base
+FROM intel-extension-for-pytorch:main AS base
 
 ARG MODEL_NAME
 ENV MODEL_NAME_=${MODEL_NAME}
@@ -29,11 +29,14 @@ RUN printf '\ncpu_launcher_args=--skip-cross-node-cores' >> /home/ubuntu/config.
 # install torchserve and its dependencies into conda environment from ipex image
 RUN apt-get update && \
     git clone https://github.com/pytorch/serve.git && \
+    cd serve && \
+    git reset --hard b4bbc29 && \
+    cd /home/ubuntu && \
     . ./miniconda3/bin/activate && \
     conda activate py310 && \
     DEBIAN_FRONTEND=noninteractive python serve/ts_scripts/install_dependencies.py && \
-    conda install torchserve torch-model-archiver torch-workflow-archiver -c pytorch && \
-    conda install transformers && \
+    conda install torchserve==0.11.0 torch-model-archiver==0.11.0 torch-workflow-archiver==0.2.13 -c pytorch && \
+    conda install transformers==4.38.1 && \
     conda deactivate && \
     rm -rf serve
 
@@ -55,5 +58,5 @@ RUN . ./miniconda3/bin/activate && \
 
 
 # run Torchserve HTTP serve to respond to prediction requests
-# ENTRYPOINT ./entrypoint.sh
+ENTRYPOINT ./entrypoint.sh
 
