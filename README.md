@@ -41,7 +41,7 @@ curl -s -X POST \
 | beir/dbpedia-entity      | DBpedia-Entity is a standard test collection for entity search over the DBpedia knowledge base.  | CC BY-SA 3.0 license |
 | beir/nq      | To help spur development in open-domain question answering, the Natural Questions (NQ) corpus has been created, along with a challenge website based on this data.       |   CC BY-SA 3.0 license |
 | beir/scidocs | SciDocs is a new evaluation benchmark consisting of seven document-level tasks ranging from citation prediction, to document classification and recommendation.       |    GNU General Public License v3.0 license  |
-| beir/trec-covid | TREC-COVID followed the TREC model for building IR test collections through community evaluations of search systems.       |     |
+| beir/trec-covid | TREC-COVID followed the TREC model for building IR test collections through community evaluations of search systems.       |  CC-BY-SA-4.0 license  |
 | beir/touche2020 | Given a question on a controversial topic, retrieve relevant arguments from a focused crawl of online debate portals.      |    CC BY 4.0 license  |
 | WikiAnswers | The WikiAnswers corpus contains clusters of questions tagged by WikiAnswers users as paraphrases.       |    MIT |
 | Cohere/wikipedia-22-12-en-embeddings Dataset  | The Cohere/Wikipedia dataset is a processed version of the wikipedia-22-12 dataset. It is English only, and the articles are broken up into paragraphs.       |    Apache 2.0  |
