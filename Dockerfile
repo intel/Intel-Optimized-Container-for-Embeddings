@@ -1,3 +1,6 @@
+# Copyright (C) 2024 Intel Corporation
+# SPDX-License-Identifier: MIT
+
 # build off of ipex image
 FROM intel-extension-for-pytorch:main AS base
 
