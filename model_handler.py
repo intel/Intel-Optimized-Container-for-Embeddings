@@ -1,3 +1,6 @@
+# Copyright (C) 2024 Intel Corporation
+# SPDX-License-Identifier: MIT
+
 """
 A model handler for a custom text embedding model
 that utilizes the Intel(r) Extension for Pytorch (IPEX)

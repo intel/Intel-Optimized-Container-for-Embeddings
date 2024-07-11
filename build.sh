@@ -1,3 +1,6 @@
+# Copyright (C) 2024 Intel Corporation
+# SPDX-License-Identifier: MIT
+
 # build ipex base container
 git clone https://github.com/intel/intel-extension-for-pytorch.git
 cd intel-extension-for-pytorch
