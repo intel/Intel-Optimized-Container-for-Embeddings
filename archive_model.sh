@@ -1,4 +1,6 @@
 #!/bin/bash
+# Copyright (C) 2024 Intel Corporation
+# SPDX-License-Identifier: MIT
 
 model_dir=$1
 model_name=$2

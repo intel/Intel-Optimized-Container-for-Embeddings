@@ -1,4 +1,7 @@
 #!/bin/bash
+# Copyright (C) 2024 Intel Corporation
+# SPDX-License-Identifier: MIT
+
 set -e
 
 eval ". ./miniconda3/bin/activate"
