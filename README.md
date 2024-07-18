@@ -1,5 +1,5 @@
 # Intel Optimized Container for Embeddings
-The Intel Optimized Container for Embeddings is a lightweight text embeddig model that can be used for a variety of NLP tasks. The model is distilled from [UAE-Large-v1](https://huggingface.co/WhereIsAI/UAE-Large-V1) using the the sentence-transformers and Intel&reg; Extension for Pytorch (IPEX) frameworks. It is a 23M parameter model with an input sequence length of 512 and output embedding size of 384. It achieves average accuracies of 46% and 82% on the MTEB Retrieval and STS tasks respectively.
+The Intel Optimized Container for Embeddings is a lightweight text embeddig model that can be used for a variety of NLP tasks. The model is distilled from [UAE-Large-v1](https://huggingface.co/WhereIsAI/UAE-Large-V1) using the the sentence-transformers and Intel&reg; Extension for Pytorch (IPEX) frameworks. It is a 23M parameter model with an input sequence length of 512 and output embedding size of 512. It achieves average accuracies of 46% and 82% on the MTEB Retrieval and STS tasks respectively.
 
 ## Cloning
 The model files are stored using git LFS. Make sure to install [git LFS](https://github.com/git-lfs/git-lfs/blob/main/INSTALLING.md) before cloning this repo.
@@ -38,11 +38,11 @@ curl -s -X POST \
 
 | Dataset       | Description           | License  |
 | ------------- |:-------------:| -----:|
-| beir/dbpedia-entity      | DBpedia-Entity is a standard test collection for entity search over the DBpedia knowledge base.  | CC BY-SA 3.0 license |
-| beir/nq      | To help spur development in open-domain question answering, the Natural Questions (NQ) corpus has been created, along with a challenge website based on this data.       |   CC BY-SA 3.0 license |
-| beir/scidocs | SciDocs is a new evaluation benchmark consisting of seven document-level tasks ranging from citation prediction, to document classification and recommendation.       |    GNU General Public License v3.0 license  |
-| beir/trec-covid | TREC-COVID followed the TREC model for building IR test collections through community evaluations of search systems.       |  CC-BY-SA-4.0 license  |
-| beir/touche2020 | Given a question on a controversial topic, retrieve relevant arguments from a focused crawl of online debate portals.      |    CC BY 4.0 license  |
+| beir/dbpedia-entity      | DBpedia-Entity is a standard test collection for entity search over the DBpedia knowledge base.  | CC-BY-SA 3.0 |
+| beir/nq      | To help spur development in open-domain question answering, the Natural Questions (NQ) corpus has been created, along with a challenge website based on this data.       |   CC-BY-SA 3.0 |
+| beir/scidocs | SciDocs is a new evaluation benchmark consisting of seven document-level tasks ranging from citation prediction, to document classification and recommendation.       |    CC-BY-SA-4.0  |
+| beir/trec-covid | TREC-COVID followed the TREC model for building IR test collections through community evaluations of search systems.       |  CC-BY-SA-4.0  |
+| beir/touche2020 | Given a question on a controversial topic, retrieve relevant arguments from a focused crawl of online debate portals.      |    CC-BY-4.0  |
 | WikiAnswers | The WikiAnswers corpus contains clusters of questions tagged by WikiAnswers users as paraphrases.       |    MIT |
 | Cohere/wikipedia-22-12-en-embeddings Dataset  | The Cohere/Wikipedia dataset is a processed version of the wikipedia-22-12 dataset. It is English only, and the articles are broken up into paragraphs.       |    Apache 2.0  |
 | MLNI  | GLUE, the General Language Understanding Evaluation benchmark (https://gluebenchmark.com/) is a collection of resources for training, evaluating, and analyzing natural language understanding systems.       |    MIT |
