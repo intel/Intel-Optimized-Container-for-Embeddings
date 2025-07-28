@@ -1,3 +1,9 @@
+# PROJECT NOT UNDER ACTIVE MANAGEMENT #  
+This project will no longer be maintained by Intel.  
+Intel has ceased development and contributions including, but not limited to, maintenance, bug fixes, new releases, or updates, to this project.  
+Intel no longer accepts patches to this project.  
+ If you have an ongoing need to use this project, are interested in independently developing it, or would like to maintain patches for the open source software community, please create your own fork of this project.  
+  
 # Intel Optimized Container for Embeddings
 The Intel Optimized Container for Embeddings is a lightweight text embeddig model that can be used for a variety of NLP tasks. The model is distilled from [UAE-Large-v1](https://huggingface.co/WhereIsAI/UAE-Large-V1) using the the sentence-transformers and Intel&reg; Extension for Pytorch (IPEX) frameworks. It is a 23M parameter model with an input sequence length of 512 and output embedding size of 512. It achieves average accuracies of 46% and 82% on the MTEB Retrieval and STS tasks respectively.
 
